@@ -56,7 +56,18 @@ on storage.objects for insert
 with check ( bucket_id = 'bucket-name' and auth.role() = 'authenticated' );
 ```
 
-## 5. Local Environment Variables
+## 5. Local Edge Functions
+
+To run and test Supabase Edge Functions in a local environment:
+
+1. **Serve all functions**: Run `supabase functions serve`.
+2. **Serve a specific function**: Run `supabase functions serve <function-name>`.
+3. **Environment Variables**: If your functions require external secrets (like Stripe keys or OpenAI keys) while running locally, provide them using an env file: 
+   `supabase functions serve --env-file ./supabase/.env.local`
+
+The function will be accessible locally at: `http://127.0.0.1:54321/functions/v1/<function-name>`
+
+## 6. Local Environment Variables
 
 After running `supabase start`, the CLI outputs API URLs and keys. You must update the project's `.env.local` (or equivalent) file:
 
@@ -66,13 +77,13 @@ After running `supabase start`, the CLI outputs API URLs and keys. You must upda
 
 **Note:** For Next.js projects, ensure the prefix `NEXT_PUBLIC_` is used for keys needed on the client-side.
 
-## 6. Accessing the Environment
+## 7. Accessing the Environment
 
 - **Studio URL**: http://127.0.0.1:54323 (Default port for the UI dashboard)
 - **API URL**: http://127.0.0.1:54321
 - **DB Password**: Usually `postgres` for local access, running on `127.0.0.1:54322`.
 
-## 7. Troubleshooting Checklists
+## 8. Troubleshooting Checklists
 
 ### "Port is already allocated" / "Bind for 0.0.0.0:54322 failed"
 1. Another Supabase instance is running. Find it: `docker ps`.
