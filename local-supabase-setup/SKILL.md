@@ -4,6 +4,11 @@ description: Comprehensive step-by-step instructions for agents to set up, confi
 license: MIT
 metadata:
   version: "1.0.0"
+  agents:
+    - antigravity
+    - cursor
+    - cline
+    - claude-code
 ---
 
 # Local Supabase Setup Skill

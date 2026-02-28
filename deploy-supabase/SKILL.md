@@ -4,6 +4,11 @@ description: Comprehensive step-by-step instructions for agents to deploy a loca
 license: MIT
 metadata:
   version: "1.0.0"
+  agents:
+    - antigravity
+    - cursor
+    - cline
+    - claude-code
 ---
 
 # Deploy Supabase Skill
